@@ -1,0 +1,38 @@
+:root {
+    /* --- PALETA DE CORES DA SELVA (VERDES) --- */
+    --cor-primaria: #2d4c1e;        /* Verde Selva Escuro - Títulos e ícones principais */
+    --cor-secundaria: #aed581;      /* Verde Folha - Detalhes e bordas leves */
+    --cor-verde-vibrante: #558b2f;  /* Verde para destaques médios */
+    --cor-verde-escuro: #1b3012;    /* Para contrastes profundos na selva */
+
+    /* --- PALETA DE CORES DO AÇAÍ (ROXOS) --- */
+    --cor-acai: #4b0082;            /* Roxo Açaí - Identidade principal do produto */
+    --cor-acai-suave: #7b1fa2;      /* Roxo Médio - Botões e links */
+    --cor-acai-hover: #9c27b0;      /* Roxo Vibrante - Para estados de interação (mouse em cima) */
+    --cor-acai-profundo: #1e0b29;   /* Roxo Petróleo - Cor adaptada para os textos do site */
+
+    /* --- CORES DE CONTRASTE E DESTAQUE --- */
+    --cor-alerta: #ff9800;          /* Laranja Sol - Para chamadas de ação e botões de pedido */
+    --cor-alerta-hover: #f57c00;    /* Laranja Escuro - Para hover nos botões de pedido */
+    --cor-destaque: #fdd835;        /* Amarelo - Para estrelas ou ícones de animais */
+
+    /* --- CORES NEUTRAS E FUNDOS --- */
+    --cor-fundo: #fdfbff;           /* Branco com toque de roxo - Para limpeza visual */
+    --cor-creme-selva: #f1f8e9;     /* Creme esverdeado - Para fundo de sections ou asides */
+    --cor-texto: var(--cor-acai-profundo); /* Aplicação da cor adaptada no texto */
+    --cor-branco: #ffffff;
+    --cor-cinza-leve: #e0e0e0;
+
+    /* --- TIPOGRAFIA ADAPTÁVEL (RECURSIVO) --- */
+    --fonte-titulo: clamp(2rem, 5vw, 3.5rem);  
+    --fonte-subtitulo: clamp(1.5rem, 3.5vw, 2.2rem);
+    --fonte-corpo: clamp(1rem, 1.2vw, 1.125rem);
+
+    /* --- ESPAÇAMENTOS E BORDAS --- */
+    --gap-padrao: clamp(1rem, 2.5vw, 2rem);
+    --raio-borda: 15px; /* Para manter o estilo arredondado do Zoo */
+    
+    /* --- TEMPOS DE ANIMAÇÃO --- */
+    --velocidade-suave: 0.5s ease-in-out;
+    --velocidade-entrada: 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
