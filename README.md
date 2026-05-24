@@ -15,7 +15,7 @@ O projeto foca em uma experiência lúdica para o usuário:
 * **JavaScript** (Em breve)
 
 ## 📌 Status
-🕒 Em fase de planejamento e estruturação de layout.
+Concluído.
 
 ---
 Copyright © 2026 - feito por Sarah Sabino
