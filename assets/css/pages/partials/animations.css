@@ -1,39 +1,28 @@
 .animal-animado {
     transform-origin: bottom center;
     animation: balanco 7s ease infinite;
-   
 }
 
 @keyframes balanco {
-    0%, 100% {
-        transform: rotate(0deg);
-       
-    }
-    50% { transform: rotate(7deg);}
-    }
+    0%, 100% { transform: rotate(0deg); }
+    50%      { transform: rotate(7deg); }
+}
 
+/* clip corta o deslocamento lateral sem criar rolagem horizontal */
+section#familia {
+    overflow-x: clip;
+}
 
-section#familia article:nth-last-of-type(1) {  
-   animation: aparece-d;animation-timeline: view();
-   animation-range: entry 0% cover 45%;
+@keyframes aparece-e {
+    from {
+        transform: translateX(-20vw);
+        opacity: 0;
+    }
 }
 
 @keyframes aparece-d {
     from {
         transform: translateX(20vw);
+        opacity: 0;
     }
 }
-
-section#familia article:nth-child(1) {
-    animation: aparece-e;
-    animation-timeline: view();
-    animation-range: entry 0% cover 45%;
-}
-
-@keyframes aparece-e {
-      from {
-        transform: translateX(-20vw);
-    }
-}
-
-

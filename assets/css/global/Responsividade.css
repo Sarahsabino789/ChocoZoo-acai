@@ -53,11 +53,10 @@
     white-space: nowrap;
 }
 
-    /* SECTION SABOR — texto e imagem lado a lado */
+    /* SECTION SABOR — layout final fica no bloco unificado no fim do arquivo */
     section#sabor {
         height: 50vh;
         padding: 1px;
-        flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
         gap: .1rem;
@@ -68,12 +67,6 @@
         min-width: 0;
         gap: .3rem;
         padding: 0.5rem;
-    }
-
-    section#sabor div iframe {
-         height: 25vh;
-         width: 40vw;
-         transform: translateY(-5vh);
     }
 
     section#sabor h1 {
@@ -265,6 +258,17 @@
         font-size: clamp(0.9rem, 3.5vw, 1.1rem);
     }
 
+    section#familia .flex-organizacao-re {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    section#familia article {
+        align-items: center;
+        margin: 0 auto;
+    }
+
     .icon-e,
     .icon-c {
         height: 4vh;
@@ -350,28 +354,7 @@
         display: block;
     }
 
-    /*footer */
-
-     footer {
-        padding: 1.5rem 5.5rem;
-        grid-column: unset;
-        grid-row: unset;
-    }
-
-    footer .flex-organizacao-ra {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 0.5rem;
-        width: 100%;
-    }
-
-    footer .flex-organizacao-ra > section,
-    footer .flex-organizacao-ra > nav {
-        flex: 1;
-        min-width: 0;
-    }
+    /*footer — ajustes finais de layout ficam no bloco unificado no fim do arquivo */
 
     footer h2 {
         font-size: clamp(0.9rem, 3.5vw, 1.2rem);
@@ -380,7 +363,6 @@
 
     footer h3 {
         font-size: clamp(0.8rem, 3vw, 1rem);
-        transform: none;
         border-bottom: 1px solid rgba(255,255,255,0.2);
         padding-bottom: 0.3rem;
         margin-bottom: 0.4rem;
@@ -436,50 +418,6 @@
     .separa p {
         font-size: clamp(0.6rem, 2.2vw, 0.75rem);
     }
-
-     div#dh > section:first-child   {
-    transform: translateX(-18vw);
-    }
-
-     div#dh > section:last-child {
-    transform: translate( 3vw,-0.5vh);
-
-    }
-
-    div#dh > nav:nth-child(2) {
-    transform: translateX(-10vw);
-    }
-
-     div#dh > nav > :nth-child(2) {
-    transform: translateX(4vw);
-    }
-
-    /* ANIMAÇÕES */
-    .animal-animado {
-        animation: balanco 7s ease infinite;
-    }
-
-    section#familia article:nth-last-of-type(1) {  
-   animation: aparece-d;animation-timeline: view();
-   animation-range: entry 40% cover 73%;
-}
-
-@keyframes aparece-d {
-    from {
-        transform: translateX(50vw);
-    }
-}
-    section#familia article:nth-child(1) {
-    animation: aparece-e;
-    animation-timeline: view();
-    animation-range: entry 0% cover 63%;
-}
-
-@keyframes aparece-e {
-      from {
-        transform: translateX(-50vw);
-    }
-}
 }
 
 /* ================================================
@@ -524,11 +462,10 @@
         flex-shrink: 0;
     }
 
-    /* SECTION SABOR */
+    /* SECTION SABOR — layout final fica no bloco unificado no fim do arquivo */
     section#sabor {
         height: auto;
         padding: 2rem 1.5rem;
-        flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
         gap: 0;
@@ -540,11 +477,6 @@
         padding: 0;
         margin: 0 ;
     }
-
-    section#sabor div iframe {
-    height: 40vh;
-    width: 50vw;
-}
 
     section#sabor h1 {
         font-size: clamp(1.5rem, 4vw, 2.2rem);
@@ -800,37 +732,11 @@
         left: 1.8vw;
     }
 
-    /* FOOTER */
-    
-    footer {
-        padding: 2rem 3rem;
-        grid-column: unset;
-        grid-row: unset;
-    }
-
-    footer .flex-organizacao-ra {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 1rem;
-        width: 100%;
-    }
-
-    footer .flex-organizacao-ra > section,
-    footer .flex-organizacao-ra > nav {
-        flex: 1;
-        min-width: 0;
-    }
+    /* FOOTER — ajustes finais de layout ficam no bloco unificado no fim do arquivo */
 
     footer h2 {
         font-size: clamp(1rem, 2.5vw, 1.4rem);
         letter-spacing: 1px;
-    }
-
-    footer h3 {
-        font-size: clamp(0.9rem, 2vw, 1.1rem);
-        transform: none;
     }
 
     footer p {
@@ -882,39 +788,89 @@
     .separa p {
         font-size: clamp(0.75rem, 1.8vw, 0.9rem);
     }
+}
 
-    div#dh > section:first-child   {
-    transform: translateX(-4vw);
+/* ================================================
+   AJUSTES UNIFICADOS — MOBILE + TABLET (até 900px)
+   Vem por último para sobrescrever os blocos acima
+   ================================================ */
+@media (max-width: 900px) {
+
+    /* ---------- HERO ---------- */
+    section#sabor {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 1.5rem 1rem 2rem;
+        gap: 1.5rem;
     }
 
-     div#dh > section:last-child {
-    transform: translate( 3vw,-0.5vh);
-
+    section#sabor > div.flex-organizacao-c {
+        flex: none;
+        width: 100%;
+        padding: 0;
+        align-items: center;
+        text-align: center;
     }
 
-    div#dh > nav:nth-child(2) {
-    transform: translateX(-5vw);
+    /* <br> manuais criam linhas curtas em tela estreita */
+    section#sabor br,
+    section#historia br,
+    section#familia br {
+        display: none;
     }
 
-     div#dh > nav > :nth-child(2) {
-    transform: translateX(2vw);
+    /* seletor com id vence a regra base .modelo-3d do index.css */
+    section#sabor .modelo-3d {
+        width: 100%;
+        max-width: 520px;
+        height: 55vw;
+        min-height: 260px;
+        max-height: 420px;
     }
 
-
-    /* ANIMAÇÕES */
-    .animal-animado {
-        animation: balanco 7s ease infinite;
+    /* ---------- FOOTER ---------- */
+    footer#final {
+        padding: 2rem 1rem 1.5rem;
     }
 
-    section#familia article:nth-last-of-type(1) {
-        animation: aparece-d;
-        animation-timeline: view();
-        animation-range: entry 0% cover 45%;
+    footer .flex-organizacao-ra {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        text-align: center;
     }
 
-    section#familia article:nth-child(1) {
-        animation: aparece-e;
-        animation-timeline: view();
-        animation-range: entry 0% cover 45%;
+    footer .flex-organizacao-ra > section,
+    footer .flex-organizacao-ra > nav {
+        flex: none;
+        width: 100%;
+        align-items: center;
+    }
+
+    /* translates antigos empurravam as colunas para fora da tela — desnecessários em coluna */
+    div#dh > section:first-child,
+    div#dh > section:last-child,
+    div#dh > nav:nth-child(2),
+    div#dh > nav > :nth-child(2) {
+        transform: none;
+    }
+
+    footer h3 {
+        transform: none;
+        display: inline-block;
+    }
+
+    /* e-mail sem ponto de quebra estourava a coluna estreita */
+    footer p,
+    footer a {
+        overflow-wrap: anywhere;
+        white-space: normal;
+    }
+
+    nav#icons-tamanho {
+        justify-content: center;
+        gap: 1rem;
     }
 }
