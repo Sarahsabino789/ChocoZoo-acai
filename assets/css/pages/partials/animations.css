@@ -11,6 +11,8 @@
 /* clip corta o deslocamento lateral sem criar rolagem horizontal */
 section#familia {
     overflow-x: clip;
+    view-timeline-name: --familia-scroll;
+    view-timeline-axis: block;
 }
 
 @keyframes aparece-e {
@@ -36,18 +38,21 @@ section#familia {
 }
 
 /* Scroll-reveal dos cards de #familia, só com CSS (sem JS):
-   animation-timeline: view() liga o progresso da animação à posição
-   do próprio elemento na tela conforme o usuário rola. #trabalhe entra
-   primeiro (range começa em 0%) e #escondido logo em seguida (range
-   começa um pouco depois), criando o efeito de "um entra, espera, entra o outro". */
+   animation-timeline usa a timeline nomeada da própria seção (--familia-scroll),
+   então o range de 0% a 100% corresponde ao scroll da seção inteira (110vh) —
+   não só o pedacinho em que o card está "entrando" na tela. Isso dá bem mais
+   distância de rolagem pra animação, deixando ela visivelmente mais lenta.
+   #trabalhe termina de aparecer em 45% do scroll da seção; #escondido só
+   começa depois (em 15%, quando #trabalhe já está bem visível) e termina em
+   60% — os dois terminam bem antes da seção acabar. */
 section#familia article#trabalhe {
-    animation: aparece-e 1s ease both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 55%;
+    animation: aparece-e 1.4s ease both;
+    animation-timeline: --familia-scroll;
+    animation-range: 0% 45%;
 }
 
 section#familia article#escondido {
-    animation: aparece-d 1s ease both;
-    animation-timeline: view();
-    animation-range: entry 20% entry 75%;
+    animation: aparece-d 1.4s ease both;
+    animation-timeline: --familia-scroll;
+    animation-range: 15% 60%;
 }
