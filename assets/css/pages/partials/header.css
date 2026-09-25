@@ -35,18 +35,32 @@ header a {
 
 li a.style {
  color: var(--branco);
+ position: relative;
+ padding-bottom: 2px;
+ transition: opacity 0.25s ease;
+}
+
+li a.style::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background-color: var(--branco);
+    transition: width 0.3s ease;
 }
 
  header li a.style:hover {
-    font-style: italic;
-    opacity: 60%;
-    border-bottom: 2px solid white;
+    opacity: 85%;
+}
+
+header li a.style:hover::after {
+    width: 100%;
 }
 
  header li a.style:active {
-    font-style: normal;
     opacity: 100%;
-    border-bottom: none;
 }
 
 .btn-branco {

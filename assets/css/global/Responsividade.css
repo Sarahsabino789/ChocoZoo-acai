@@ -6,7 +6,7 @@
 /* ================================================
    MOBILE — até 480px
    ================================================ */
-@media (max-width: 480px) {
+   @media (max-width: 480px) {
 
     /* BODY */
     body {
@@ -67,6 +67,12 @@
         min-width: 0;
         gap: .3rem;
         padding: 0.5rem;
+    }
+
+    .modelo-3d {
+        width: 40% !important;
+        height: 180px !important;
+        min-width: 120px;
     }
 
     section#sabor h1 {
@@ -478,6 +484,11 @@
         margin: 0 ;
     }
 
+    .modelo-3d {
+        width: 45% !important;
+        height: 280px !important;
+    }
+
     section#sabor h1 {
         font-size: clamp(1.5rem, 4vw, 2.2rem);
     }
@@ -820,14 +831,7 @@
         display: none;
     }
 
-    /* seletor com id vence a regra base .modelo-3d do index.css */
-    section#sabor .modelo-3d {
-        width: 100%;
-        max-width: 520px;
-        height: 55vw;
-        min-height: 260px;
-        max-height: 420px;
-    }
+   
 
     /* ---------- FOOTER ---------- */
     footer#final {
