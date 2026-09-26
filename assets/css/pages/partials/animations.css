@@ -37,14 +37,7 @@ section#familia {
     }
 }
 
-/* Scroll-reveal dos cards de #familia, só com CSS (sem JS):
-   animation-timeline usa a timeline nomeada da própria seção (--familia-scroll),
-   então o range de 0% a 100% corresponde ao scroll da seção inteira (110vh) —
-   não só o pedacinho em que o card está "entrando" na tela. Isso dá bem mais
-   distância de rolagem pra animação, deixando ela visivelmente mais lenta.
-   #trabalhe termina de aparecer em 45% do scroll da seção; #escondido só
-   começa depois (em 15%, quando #trabalhe já está bem visível) e termina em
-   60% — os dois terminam bem antes da seção acabar. */
+
 section#familia article#trabalhe {
     animation: aparece-e 1.4s ease both;
     animation-timeline: --familia-scroll;

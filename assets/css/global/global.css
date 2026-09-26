@@ -1,5 +1,9 @@
 @import url('./variables.css');
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -98,10 +102,57 @@ body {
 /*tamanho de alguns emojis*/
 .emojis {
     font-size: 2.9rem;
+    color: var(--verde-acento);
 }
 
 .animais {
     font-size: 3.5rem;
+    color: var(--verde-acento);
+}
+
+/* Ícones SVG que substituíram os emojis: escalam com o font-size
+   herdado de .emojis/.animais/.animal-animado, então as regras
+   responsivas de tamanho que já existiam continuam funcionando. */
+.emojis svg,
+.animais svg,
+.animal-animado svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+}
+
+.icone-trio {
+    display: inline-flex;
+    gap: 0.15em;
+}
+
+/* Ícone único inline (substitui emojis soltos no meio de texto) */
+.icone-inline {
+    display: inline-flex;
+    vertical-align: -0.15em;
+    color: var(--verde-acento);
+}
+
+/* Lista com ícone de check (substitui o caractere ✓) */
+ul.lista-check {
+    list-style: none;
+    padding-left: 1.5em;
+}
+
+ul.lista-check li {
+    position: relative;
+}
+
+ul.lista-check li::before {
+    content: "";
+    position: absolute;
+    left: -1.5em;
+    top: 0.25em;
+    width: 1em;
+    height: 1em;
+    background-color: var(--verde-acento);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") no-repeat center / contain;
 }
 
 
