@@ -822,6 +822,11 @@
         padding: 0;
         align-items: center;
         text-align: center;
+        order: 2; /* texto vai para baixo */
+    }
+
+    section#sabor .modelo-3d {
+        order: 1; /* açaí 3D fica em cima */
     }
 
     /* <br> manuais criam linhas curtas em tela estreita */
